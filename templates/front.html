@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style> 
+    body {
+        background-image: url('https://st4.depositphotos.com/13324256/22824/i/600/depositphotos_228244140-stock-photo-diabetes-lettering-made-wooden-cubes.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    h1{
+        padding-top: 0px;
+        padding-left: 250px;
+        font-size: 50px;
+        margin-bottom: -6px;
+    }
+    form{
+         margin: 1px auto;
+         max-width: 500px;
+         max-height:500px;
+         height: 80%;
+         width: 80%; 
+    }
+    .btn{
+        border:2px solid black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 800;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+    fieldset{
+        padding-top: 0%;
+        background-color: #eeeeee;
+        color: black;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+       font-weight: 800;
+       text-transform: capitalize;
+        width: 350px;
+    }
+        
+    legend{
+       background-color: gray;
+       color: black;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+       font-weight: 800;
+       text-transform: capitalize;
+       padding: 5px 10px;
+    }
+    input{
+        margin:15px;
+    }
+    p{
+        text-align: right;
+        font-size: 25px;
+        font-family: robot,segoe ui;
+	    background: Transparent;	
+	    color:black;
+	    text-shadow: 10px 10px 20px grey;
+    }
+    .s{
+        font-size: 50px !important;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+        padding-top: 20px;
+        font-size: 45px !important;
+    }
+    </style>
+    
+</head>
+<body>
+  <h1><centre>Diabetes Prediction Using Machine Learning</centre></h1>
+  <br>
+  <form method="post" action="{{url_for('predict')}}">
+      <fieldset>
+          <legend>Diabetes prediction: </legend>
+          Pregnencies <input type="text" placeholder="Pregnencies" name="prg" required>
+          <br>
+          Glucose <input type="text" placeholder="Glucose" name="gl" required>
+          <br>
+          Blood Pressure <input type="text" placeholder="Blood Pressure" name="bp" required>
+          <br>
+          Skin Thickness <input type="text" placeholder="Skin Thickness" name="sk" required>
+          <br>
+          Insulin <input type="text" placeholder="Insulin" name="ins" required>
+          <br>
+          BMI <input type="text" placeholder="BMI" name="BMI" required>
+          <br>
+          Pedigree Function <input type="text" placeholder="Pedigree Function" name="ped" required>
+          <br>
+          Age <input type="text" placeholder="Age" name="age" required>
+          <br>
+          <button type="submit" class="btn">Predict</button>
+      </fieldset>
+      <br>
+      <strong class="s">{{ prediction_text}}</strong>
+  </form>
+  <!-- <p>
+      <strong>Made By:</strong>
+      <br>
+      <strong>Ayush Jha 11500219023</strong>
+  </p> -->
+</body>
+</html>
